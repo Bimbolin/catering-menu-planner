@@ -1,0 +1,22 @@
+{
+  "name": "catering-menu-planner",
+  "version": "1.0.0",
+  "description": "WDD330Final-project",
+  "homepage": "https://github.com/Bimbolin/catering-menu-planner#readme",
+  "bugs": {
+    "url": "https://github.com/Bimbolin/catering-menu-planner/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bimbolin/catering-menu-planner.git"
+  },
+  "author": "Bimbola <bosholowu@byupathway.edu>",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.14.4"
+  }
+}

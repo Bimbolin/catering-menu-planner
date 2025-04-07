@@ -1,0 +1,65 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6f0;
+    color: #333;
+  }
+  
+  header {
+    background-color: #f57c00;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 50px;
+    vertical-align: middle;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 2em;
+  }
+  
+  .btn {
+    background-color: #388e3c;
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2e7d32;
+  }
+  
+  form {
+    text-align: center;
+    margin-top: 2em;
+  }
+  
+  .recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .recipe-card {
+    background: #fff3e0;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

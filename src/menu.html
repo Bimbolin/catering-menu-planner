@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Build your personalized menu plan." />
+  <title>Build Menu</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Build Your Menu</h1>
+  </header>
+
+  <main>
+    <form id="recipe-form">
+      <label for="ingredient">Enter an ingredient:</label>
+      <input type="text" id="ingredient" required />
+      <button type="submit">Find Recipes</button>
+    </form>
+
+    <div id="recipes" class="recipe-list"></div>
+    <div id="weather"></div>
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

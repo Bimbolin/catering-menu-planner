@@ -1,20 +1,42 @@
 import { fetchRecipes } from './edamam.js';
 import { fetchWeather } from './weather.js';
-import { renderRecipes } from './utils.js';
+import {
+  displayRecipes,
+  displayWeather,
+  displaySeasonal,
+  displayShoppingList,
+  displayNutrition,
+  displayCost
+} from './utils.js';
 
-const form = document.getElementById('recipe-form');
-const weatherDiv = document.getElementById('weather');
+const form = document.getElementById('menu-form');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const ingredient = document.getElementById('ingredient').value.trim();
-  if (!ingredient) return;
 
-  const recipes = await fetchRecipes(ingredient);
-  renderRecipes(recipes);
-});
+  const diet = document.getElementById('diet').value;
+  const ingredients = document.getElementById('ingredients').value;
+  const city = document.getElementById('city').value;
 
-// Load seasonal weather data on page load
-fetchWeather('your-city-here').then((data) => {
-  weatherDiv.textContent = `Weather: ${data.main.temp}°C - ${data.weather[0].main}`;
+  try {
+    // Loading indicators
+    document.getElementById('recipe-list').textContent = "Loading recipes...";
+    document.getElementById('weather-content').textContent = "Loading weather...";
+
+    // Fetch data
+    const weather = await fetchWeather(city);
+    displayWeather(weather);
+
+    const recipes = await fetchRecipes(ingredients, diet);
+    displayRecipes(recipes);
+
+    // Additional UI updates
+    displaySeasonal(weather.temp);
+    displayShoppingList(recipes);
+    displayNutrition(recipes);
+    displayCost(recipes);
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please check your input or try again later.");
+  }
 });

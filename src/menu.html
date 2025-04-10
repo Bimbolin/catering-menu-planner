@@ -9,19 +9,49 @@
 </head>
 <body>
   <header>
-    <h1>Build Your Menu</h1>
+    <h1>🍽️ Menu Builder</h1>
+    <p>Plan the perfect menu based on your needs and local weather!</p>
   </header>
 
   <main>
-    <form id="recipe-form">
-      <label for="ingredient">Enter an ingredient:</label>
-      <input type="text" id="ingredient" required />
-      <button type="submit">Find Recipes</button>
-    </form>
+    <!-- 🧾 User Inputs -->
+    <section class="input-section">
+      <h2>🧾 Enter Menu Preferences</h2>
 
-    <div id="recipes" class="recipe-list"></div>
-    <div id="weather"></div>
+      <form id="menu-form">
+        <label for="diet">Dietary Preference</label>
+        <select id="diet">
+          <option value="">None</option>
+          <option value="low-carb">Low-Carb</option>
+          <option value="low-fat">Low-Fat</option>
+          <option value="high-protein">High-Protein</option>
+          <option value="balanced">Balanced</option>
+          <option value="vegan">Vegan</option>
+        </select>
+      
+        <label for="ingredients">Ingredients (comma-separated)</label>
+        <input type="text" id="ingredients" placeholder="e.g. chicken, broccoli" required />
+      
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="e.g. London" required />
+      
+        <button type="submit">Generate Menu</button>
+      </form>
+      
+      <div id="weather-content" class="output-section"></div>
+      <div id="seasonal-suggestion" class="output-section"></div>
+      <div id="recipe-list" class="output-section"></div>
+      <div id="shopping-items" class="output-section"></div>
+      <div id="nutrition-info" class="output-section"></div>
+      <div id="cost-estimate" class="output-section"></div>
+      
+
+    </section>
   </main>
+
+  <footer>
+    <p>Made with ❤️ for catering pros and food lovers.</p>
+  </footer>
 
   <script type="module" src="./js/main.js"></script>
 </body>

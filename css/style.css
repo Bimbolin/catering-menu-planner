@@ -1,0 +1,15 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #fff8f0;
+}
+form {
+  margin-bottom: 2rem;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #fff;
+}

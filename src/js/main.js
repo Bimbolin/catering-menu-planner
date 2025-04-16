@@ -9,34 +9,30 @@ import {
   displayCost
 } from './utils.js';
 
-const form = document.getElementById('menu-form');
-
-form.addEventListener('submit', async (e) => {
+document.getElementById('menu-form').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const diet = document.getElementById('diet').value;
   const ingredients = document.getElementById('ingredients').value;
   const city = document.getElementById('city').value;
 
+  if (!ingredients || !city) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
   try {
-    // Loading indicators
-    document.getElementById('recipe-list').textContent = "Loading recipes...";
-    document.getElementById('weather-content').textContent = "Loading weather...";
-
-    // Fetch data
-    const weather = await fetchWeather(city);
-    displayWeather(weather);
-
     const recipes = await fetchRecipes(ingredients, diet);
-    displayRecipes(recipes);
+    const weather = await fetchWeather(city);
 
-    // Additional UI updates
+    displayWeather(weather);
     displaySeasonal(weather.temp);
+    displayRecipes(recipes);
     displayShoppingList(recipes);
     displayNutrition(recipes);
     displayCost(recipes);
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong. Please check your input or try again later.");
+  } catch (err) {
+    alert("❌ Error generating menu. Try using different ingredients or check the console.");
+    console.error(err);
   }
 });

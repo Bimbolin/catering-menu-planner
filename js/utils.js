@@ -1,3 +1,4 @@
+
 export function displayWeather(data) {
   document.getElementById('weather-content').innerHTML = `
     <p>Weather in ${data.city}: ${data.temp}°C - ${data.condition}</p>

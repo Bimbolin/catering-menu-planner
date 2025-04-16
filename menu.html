@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Planner</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <h1>🍽️ Menu Builder</h1>
+  <form id="menu-form">
+    <label for="diet">Diet:</label>
+    <select id="diet">
+      <option value="">None</option>
+      <option value="vegan">Vegan</option>
+      <option value="low-fat">Low-Fat</option>
+    </select>
+
+    <label for="ingredients">Ingredients:</label>
+    <input id="ingredients" placeholder="e.g. chicken, rice" />
+
+    <label for="city">City:</label>
+    <input id="city" placeholder="e.g. New York" />
+
+    <button type="submit">Plan Menu</button>
+  </form>
+
+  <div id="weather-content"></div>
+  <div id="seasonal-suggestion"></div>
+  <div id="recipe-list"></div>
+  <div id="shopping-items"></div>
+  <div id="nutrition-info"></div>
+  <div id="cost-estimate"></div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
